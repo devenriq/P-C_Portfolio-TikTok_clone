@@ -1,14 +1,11 @@
 import { ActionBar } from "./components/ActionBar/index";
+import { Video } from "./components/Video/index";
 
 function App() {
   return (
-    <>
-      <ActionBar
-        profileImg={"https://picsum.photos/200"}
-        likes={10}
-        shares={2}
-      />
-    </>
+    <div className="container">
+      <Video source="https://picsum.photos/500" />
+    </div>
   );
 }
 
