@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-import { FaHeart, FaComment, FaShare } from "react-icons/fa";
+import { FaHeart, FaComment, FaShare, FaPlusCircle } from "react-icons/fa";
 
 export const ActionBar = ({
   profileImg,
@@ -17,6 +17,9 @@ export const ActionBar = ({
     <ul className="actions">
       <li className="actions--item">
         <img className="actions--img" src={profileImg} alt="Foto de perfil" />
+        <span>
+          <FaPlusCircle />
+        </span>
       </li>
       <li className="actions--item">
         <button
