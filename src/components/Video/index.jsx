@@ -5,9 +5,7 @@ import "./styles.css";
 
 import { FaPlayCircle } from "react-icons/fa";
 
-import sampleVideo from "../../assets/BigBuckBunny_512kb.mp4";
-
-export const Video = ({ source }) => {
+export const Video = ({ source, poster }) => {
   const videoRef = useRef(null);
   const buttonPlayReference = useRef(null);
 
@@ -25,14 +23,18 @@ export const Video = ({ source }) => {
     <div className="videoContainer">
       <video
         loop
-        poster={source}
         ref={videoRef}
         className="video"
         onClick={togglePlay}
+        poster={poster}
       >
-        <source src={sampleVideo} type="video/mp4" />
+        <source src={source} type="video/mp4" />
       </video>
-      <button className="video--button" ref={buttonPlayReference}>
+      <button
+        className="video--button"
+        ref={buttonPlayReference}
+        onClick={togglePlay}
+      >
         <FaPlayCircle />
       </button>
       <ActionBar
