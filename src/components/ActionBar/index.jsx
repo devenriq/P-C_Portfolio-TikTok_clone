@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CommentsContext } from "../../components/context/CommentsContext";
+
 import "./styles.css";
 
 import { FaHeart, FaComment, FaShare, FaPlusCircle } from "react-icons/fa";
@@ -11,6 +13,7 @@ export const ActionBar = ({
 }) => {
   const [likes, setLikes] = useState(likesCount);
   const [comments, setComments] = useState(commentsCount);
+  const { toggleComments } = useContext(CommentsContext);
   const [shares, setShares] = useState(sharesCount);
 
   return (
@@ -36,7 +39,7 @@ export const ActionBar = ({
         <p className="actions--number">{likes}</p>
       </li>
       <li className="actions--item">
-        <button>
+        <button onClick={() => toggleComments((prev) => !prev)}>
           <FaComment />
         </button>
         <p className="actions--number">{comments}</p>
