@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CommentsContext } from "../../components/context/CommentsContext";
+
 import { Comment } from "../Comment/index";
 import "./styles.css";
 
