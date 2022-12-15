@@ -44,8 +44,9 @@
   font-size: 30px;
 }
 
-.actions--item button:hover{
-  color: red
+
+.active{
+  color:red;
 }
 
 .actions--number{

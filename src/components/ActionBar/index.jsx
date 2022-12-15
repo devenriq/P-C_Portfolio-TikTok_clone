@@ -16,6 +16,18 @@ export const ActionBar = ({
   const { toggleComments } = useContext(CommentsContext);
   const [shares, setShares] = useState(sharesCount);
 
+  const handleLike = (e) => {
+    const target = e.target;
+
+    if (likes !== likesCount) {
+      target.classList.remove("active");
+      setLikes(likesCount);
+    } else {
+      target.classList.add("active");
+      setLikes((prev) => prev + 1);
+    }
+  };
+
   return (
     <ul className="actions">
       <li className="actions--item">
@@ -25,15 +37,7 @@ export const ActionBar = ({
         </span>
       </li>
       <li className="actions--item">
-        <button
-          onClick={() => {
-            if (likes !== likesCount) {
-              setLikes(likesCount);
-            } else {
-              setLikes((prev) => prev + 1);
-            }
-          }}
-        >
+        <button onClick={handleLike}>
           <FaHeart />
         </button>
         <p className="actions--number">{likes}</p>
